@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DataMart_eCPM_WebInterface.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    AMP – Advertising Monthly Processing
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:Label ID="lblUserName" runat="server"></asp:Label>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem Text="Tables" >
+                            <asp:MenuItem NavigateUrl="~/TablesDFPMarkets.aspx" Text="DFP Markets"/>
+                            <asp:MenuItem NavigateUrl="~/ATF_BTF_Mappings.aspx" Text="ATF_BTF"/>
+                            <asp:MenuItem NavigateUrl="~/Divisions.aspx" Text="Divisions"/>
+                            <asp:MenuItem NavigateUrl="~/TablesDFPAdvertisers.aspx" Text="DFP Advertisers"/>
+                            <asp:MenuItem NavigateUrl="~/TablesHouse.aspx" Text="House"/>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="QA" >
+                            <asp:MenuItem NavigateUrl="~/QAMissingMarkets.aspx" Text="DFP Markets (Missing)"/>
+                            <asp:MenuItem NavigateUrl="~/QASalesOrigins.aspx" Text="Sales Origins (Errors)"/>
+                            <asp:MenuItem NavigateUrl="~/QABillingCodes.aspx" Text="Billing Codes (Missing)"/>
+                            <asp:MenuItem NavigateUrl="~/QAMissingATF_BTF.aspx" Text="ATF_BTF (Missing)"/>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Business Logic">
+                            <asp:MenuItem NavigateUrl="~/PrimarySalesOrigin.aspx" Text="Primary Sales Origin" />
+                            <asp:MenuItem NavigateUrl="~/MaximumDeliveredValues.aspx" Text="Maximum Delivered Values" />
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

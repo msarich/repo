@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{841A2A0E-ED10-4649-BACE-F7905D9B9513}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataMart_eCPM_WebInterface</RootNamespace>
+    <AssemblyName>DataMart_eCPM_WebInterface</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="ATF_BTF_Mappings.aspx" />
+    <Content Include="AvailableFunctions.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Divisions.aspx" />
+    <Content Include="DynamicSettings.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Images\edititem.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\excel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Import.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LogicControlInLike.ascx" />
+    <Content Include="LogicControlWhen.ascx" />
+    <Content Include="MaximumDeliveredValues.aspx" />
+    <Content Include="PrimarySalesOrigin.aspx" />
+    <Content Include="QABillingCodes.aspx" />
+    <Content Include="QAMissingATF_BTF.aspx" />
+    <Content Include="QAMissingMarkets.aspx" />
+    <Content Include="QASalesOrigins.aspx" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="TablesDFPAdvertisers.aspx" />
+    <Content Include="TablesDFPMarkets.aspx" />
+    <Content Include="TablesHouse.aspx" />
+    <Content Include="UpdateATF_BTF_Mappings.aspx" />
+    <Content Include="UpdateDivisions.aspx" />
+    <Content Include="UpdateQABillingCodes.aspx" />
+    <Content Include="UpdateTablesDFPAdvertisers.aspx" />
+    <Content Include="UpdateTablesDFPMarkets.aspx" />
+    <Content Include="UpdateTablesHouse.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ATF_BTF_Mappings.aspx.cs">
+      <DependentUpon>ATF_BTF_Mappings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ATF_BTF_Mappings.aspx.designer.cs">
+      <DependentUpon>ATF_BTF_Mappings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DataAccess.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Divisions.aspx.cs">
+      <DependentUpon>Divisions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Divisions.aspx.designer.cs">
+      <DependentUpon>Divisions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="JobStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogicControlInLike.ascx.cs">
+      <DependentUpon>LogicControlInLike.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogicControlInLike.ascx.designer.cs">
+      <DependentUpon>LogicControlInLike.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LogicControlWhen.ascx.cs">
+      <DependentUpon>LogicControlWhen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogicControlWhen.ascx.designer.cs">
+      <DependentUpon>LogicControlWhen.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MaximumDeliveredValues.aspx.cs">
+      <DependentUpon>MaximumDeliveredValues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaximumDeliveredValues.aspx.designer.cs">
+      <DependentUpon>MaximumDeliveredValues.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrimarySalesOrigin.aspx.cs">
+      <DependentUpon>PrimarySalesOrigin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrimarySalesOrigin.aspx.designer.cs">
+      <DependentUpon>PrimarySalesOrigin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QABillingCodes.aspx.cs">
+      <DependentUpon>QABillingCodes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QABillingCodes.aspx.designer.cs">
+      <DependentUpon>QABillingCodes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QAMissingATF_BTF.aspx.cs">
+      <DependentUpon>QAMissingATF_BTF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QAMissingATF_BTF.aspx.designer.cs">
+      <DependentUpon>QAMissingATF_BTF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QAMissingMarkets.aspx.cs">
+      <DependentUpon>QAMissingMarkets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QAMissingMarkets.aspx.designer.cs">
+      <DependentUpon>QAMissingMarkets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QASalesOrigins.aspx.cs">
+      <DependentUpon>QASalesOrigins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QASalesOrigins.aspx.designer.cs">
+      <DependentUpon>QASalesOrigins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TablesDFPAdvertisers.aspx.cs">
+      <DependentUpon>TablesDFPAdvertisers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TablesDFPAdvertisers.aspx.designer.cs">
+      <DependentUpon>TablesDFPAdvertisers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TablesDFPMarkets.aspx.cs">
+      <DependentUpon>TablesDFPMarkets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TablesDFPMarkets.aspx.designer.cs">
+      <DependentUpon>TablesDFPMarkets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TablesHouse.aspx.cs">
+      <DependentUpon>TablesHouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TablesHouse.aspx.designer.cs">
+      <DependentUpon>TablesHouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateATF_BTF_Mappings.aspx.cs">
+      <DependentUpon>UpdateATF_BTF_Mappings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateATF_BTF_Mappings.aspx.designer.cs">
+      <DependentUpon>UpdateATF_BTF_Mappings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDivisions.aspx.cs">
+      <DependentUpon>UpdateDivisions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateDivisions.aspx.designer.cs">
+      <DependentUpon>UpdateDivisions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateQABillingCodes.aspx.cs">
+      <DependentUpon>UpdateQABillingCodes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateQABillingCodes.aspx.designer.cs">
+      <DependentUpon>UpdateQABillingCodes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTablesDFPAdvertisers.aspx.cs">
+      <DependentUpon>UpdateTablesDFPAdvertisers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTablesDFPAdvertisers.aspx.designer.cs">
+      <DependentUpon>UpdateTablesDFPAdvertisers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTablesDFPMarkets.aspx.cs">
+      <DependentUpon>UpdateTablesDFPMarkets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTablesDFPMarkets.aspx.designer.cs">
+      <DependentUpon>UpdateTablesDFPMarkets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTablesHouse.aspx.cs">
+      <DependentUpon>UpdateTablesHouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTablesHouse.aspx.designer.cs">
+      <DependentUpon>UpdateTablesHouse.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>32694</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
