@@ -230,7 +230,7 @@ namespace DataMart_eCPM_WebInterface
             parameterList.Add(procedure);
             DataAccess.executeAsyncStoredProcedureWithoutResults("AMP_ExecuteGDMNCreateProcedure", parameterList.ToArray());
 
-            executeComputeProcedure("Create_GDMN_Monthly_GoogleDFP_5Level_Custom");
+            //executeComputeProcedure("Create_GDMN_Monthly_GoogleDFP_5Level_Custom");
             Response.Redirect("~/Default.aspx");
         }
 
@@ -332,6 +332,11 @@ namespace DataMart_eCPM_WebInterface
             {
                 date.Value = new DateTime(Convert.ToInt32(tbYearGDMNExport.Text), Convert.ToInt32(ddlMonthGDMNExport.SelectedValue), 1);
                 dataTable.Load(DataAccess.executeStoredProcedureWithResults("AMP_GetGDMNTable", new SqlParameter[1] { date }));
+            }
+            else if (((LinkButton)sender).ID.CompareTo("lbExportGDMNCustomToExcel") == 0)
+            {
+                date.Value = DateTime.Today;
+                dataTable.Load(DataAccess.executeStoredProcedureWithResults("AMP_GetGDMNCustomTable", new SqlParameter[1] { date }));
             }
             String fileDate = Convert.ToString(System.DateTime.Today.Year) +
                 Convert.ToString(System.DateTime.Today.Month) +

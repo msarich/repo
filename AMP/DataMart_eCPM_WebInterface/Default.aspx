@@ -71,7 +71,8 @@
     <br />
       Build GDMN_6Level Custom Table
     &nbsp;<asp:Label ID="lblCreateGDMN6LevelCustomTable" runat="server"></asp:Label>
-    &nbsp;- >>Open Report (TBD) for access to this data
+    &nbsp;
+    &nbsp;<asp:LinkButton ID="lbExportGDMNCustomToExcel" runat="server" OnClick="ExportCSV_Click" Text="Export Data" TableName="GDMN_5Level_Custom"></asp:LinkButton> 
     <br />
     <br />
     

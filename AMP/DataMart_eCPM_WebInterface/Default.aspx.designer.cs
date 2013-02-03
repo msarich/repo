@@ -238,6 +238,15 @@ namespace DataMart_eCPM_WebInterface {
         protected global::System.Web.UI.WebControls.Label lblCreateGDMN6LevelCustomTable;
         
         /// <summary>
+        /// lbExportGDMNCustomToExcel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbExportGDMNCustomToExcel;
+        
+        /// <summary>
         /// txtStartDate control.
         /// </summary>
         /// <remarks>

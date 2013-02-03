@@ -60,6 +60,8 @@
     <Content Include="AvailableFunctions.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="SalesOrigins.aspx" />
+    <Content Include="UpdateSalesOrigins.aspx" />
     <Content Include="Divisions.aspx" />
     <Content Include="DynamicSettings.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -149,6 +151,20 @@
     </Compile>
     <Compile Include="ATF_BTF_Mappings.aspx.designer.cs">
       <DependentUpon>ATF_BTF_Mappings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrigins.aspx.cs">
+      <DependentUpon>SalesOrigins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesOrigins.aspx.designer.cs">
+      <DependentUpon>SalesOrigins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSalesOrigins.aspx.cs">
+      <DependentUpon>UpdateSalesOrigins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateSalesOrigins.aspx.designer.cs">
+      <DependentUpon>UpdateSalesOrigins.aspx</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\DataAccess.cs" />
     <Compile Include="Default.aspx.cs">
