@@ -2,7 +2,15 @@
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h1>ATF/BTF</h1>
-    <br />
+    <hr />
+    File format when appending data from a CSV file: 
+    <table border="1" cellpadding="5">
+    <tr>
+    <th>Position</th><th>ATF_BTF</th><th>USAT Site</th>
+    </tr>
+    <tr><td>Max 50 chars</td><td>ATF or BTF</td><td>1 or 0</td></tr>
+    </table>
+    <br /> 
     <asp:LinkButton ID="lbExportSalesOriginsDataToExcel" runat="server" OnClick="ExportCSV_Click" Text="Export Data" TableName="SalesOrigins"></asp:LinkButton>
     <br />
     <br />

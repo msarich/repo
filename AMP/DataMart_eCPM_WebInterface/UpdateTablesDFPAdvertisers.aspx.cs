@@ -28,7 +28,7 @@ namespace DataMart_eCPM_WebInterface
                 btnAdd.Visible = (Request["Action"] == "Add");
                 btnUpdate.Visible = (Request["Action"] == "Update");
                 btnDelete.Visible = (Request["Action"] == "Update");
-                tbName.Text = Request["name"];
+                tbName.Text = Request.QueryString["name"];
                 tbName.Enabled = (Request["Action"] == "Add");
                 if (ddlMatch.Items.FindByText(Request["match"]) != null)
                 {

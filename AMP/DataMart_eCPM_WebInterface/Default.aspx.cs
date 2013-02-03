@@ -205,11 +205,42 @@ namespace DataMart_eCPM_WebInterface
             Response.Redirect("~/Default.aspx");
         }
 
+        protected void Execute_Custom(object sender, EventArgs e)
+        {
+
+            SqlParameter StartDate = new SqlParameter("@DATE_START", SqlDbType.Date);
+            SqlParameter EndDate = new SqlParameter("@DATE_END", SqlDbType.Date);
+            SqlParameter email = new SqlParameter("@EMAIL_RECIPIENT", SqlDbType.VarChar);
+            SqlParameter procedure = new SqlParameter("@PROCEDURE_NAME", SqlDbType.VarChar);
+            
+
+            StartDate.Value = txtStartDate.Text;
+            EndDate.Value = txtEndDate.Text;
+            email.Value = tbEmail.Text;
+                            
+            List<SqlParameter> parameterList = new List<SqlParameter>();
+            parameterList.Add(StartDate);
+            parameterList.Add(EndDate);
+            if (tbEmail.Text.Length > 0)
+            {
+                parameterList.Add(email);
+            }
+
+            procedure.Value="Create_GDMN_Monthly_GoogleDFP_5Level_Custom";
+            parameterList.Add(procedure);
+            DataAccess.executeAsyncStoredProcedureWithoutResults("AMP_ExecuteGDMNCreateProcedure", parameterList.ToArray());
+
+            executeComputeProcedure("Create_GDMN_Monthly_GoogleDFP_5Level_Custom");
+            Response.Redirect("~/Default.aspx");
+        }
+
         private void updateQueryExecutionStatus()
         {
             setExecutionStringAndColor(DataAccess.SpExecutionStatus("Create_GDMN_Monthly_AdtechHeliosIQ"), lblBuildHeliosDataStatus, cbBuildHeliosData);
             setExecutionStringAndColor(DataAccess.SpExecutionStatus("Create_GDMN_Monthly_GoogleDFP_5Level"), lblCreateGDMN6LevelTable, cbCreateGDMN6LevelTable);
+            setExecutionStringAndColor(DataAccess.SpExecutionStatus("Create_GDMN_Monthly_GoogleDFP_5Level_Custom"), lblCreateGDMN6LevelCustomTable, null);
             setExecutionStringAndColor(DataAccess.SpExecutionStatus("Create_GDMN_Monthly_GoogleDFP"), lblCreateGDMNTable, cbCreateGDMNTable);
+
         }
 
         private void updateThirdPartyImportExecutionStatus()
@@ -268,17 +299,20 @@ namespace DataMart_eCPM_WebInterface
                 case JobStatus.Status.NeverExecuted:
                     label.Text = NEVER_EXECUTED_STRING;
                     label.ForeColor = NEVER_EXECUTED_COLOR;
-                    checkBox.Enabled = true;
+                    if (checkBox != null)
+                        checkBox.Enabled = true;
                     break;
                 case JobStatus.Status.CurrentlyExecuting:
                     label.Text = EXECUTING_STRING + jobStatus.Datetime + ".";
                     label.ForeColor = EXECUTING_COLOR;
-                    checkBox.Enabled = false;
+                    if (checkBox != null)
+                        checkBox.Enabled = false;
                     break;
                 case JobStatus.Status.Executed:
                     label.Text = SUCCESSFUL_EXECUTION_STRING + jobStatus.Datetime + ".";
                     label.ForeColor = SUCCESSFUL_EXECUTION_COLOR;
-                    checkBox.Enabled = true;
+                    if (checkBox != null)
+                        checkBox.Enabled = true;
                     break;
             }
         }
@@ -339,5 +373,12 @@ namespace DataMart_eCPM_WebInterface
             Response.End();
             streamWriter.Close();
         }
+
+        protected void rblImportLocation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

@@ -49,10 +49,11 @@ namespace DataMart_eCPM_WebInterface
                 }
 
                 int index = Convert.ToInt32(e.CommandArgument);
-                String name = "&name=" + gvDFPAdvertisers.Rows[index].Cells[nameIndex].Text;
+                String name = "&name=" + System.Web.HttpUtility.UrlEncode(gvDFPAdvertisers.Rows[index].Cells[nameIndex].Text);
                 String match = "&match=" + gvDFPAdvertisers.Rows[index].Cells[matchIndex].Text;
                 String salesOriginId = "&sales_origin_id=" + gvDFPAdvertisers.DataKeys[index].Values["sales_origin_id"].ToString();
                 String sourcePage = "&SourcePage=TablesDFPAdvertisers";
+                
                 Page.Response.Redirect("~/UpdateTablesDFPAdvertisers.aspx?Action=Update" + name + match + salesOriginId + sourcePage);
             }
         }

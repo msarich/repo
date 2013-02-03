@@ -30,12 +30,13 @@
             <asp:Label ID="lblImportStarted" runat="server" ForeColor="Green"/>
             <asp:Label ID="lblSelectFileDescription" runat="server" Text="Select File Description:"/>
             <asp:LinkButton ID="lbRefreshStatus" runat="server" Text="(Refresh Status)" OnClick="RefreshStatus"></asp:LinkButton>
-            <asp:RadioButtonList ID="rblImportLocation" runat="server"></asp:RadioButtonList>
+            <asp:RadioButtonList ID="rblImportLocation" runat="server" 
+                onselectedindexchanged="rblImportLocation_SelectedIndexChanged"></asp:RadioButtonList>
             <asp:Button ID="btnImport" runat="server" Text="Import" OnClick="ImportFile"/>
         </div>
     </div>
     <hr />
-    <h1>Compute Data</h1>
+    <h1>Compute Monthly Data</h1>
     <br />
     Build GDMN Table&nbsp;
     <asp:DropDownList ID="ddlMonthGDMNExport" runat="server"/>
@@ -51,7 +52,7 @@
     &nbsp;<asp:Label ID="lblCreateGDMN6LevelTable" runat="server"></asp:Label>
     &nbsp;<asp:DropDownList ID="ddlMonthGDMN6Export" runat="server"/>
     <asp:TextBox ID="tbYearGDMN6Export" runat="server" MaxLength="4" Width="40px">YYYY</asp:TextBox>
-    &nbsp;<asp:LinkButton ID="lbExportGDMN6LevelTableToExcel" runat="server" OnClick="ExportCSV_Click" Text="Export Data" TableName="GDMN_6Level"></asp:LinkButton>   
+    &nbsp;<asp:LinkButton ID="lbExportGDMN6LevelTableToExcel" runat="server" OnClick="ExportCSV_Click" Text="Export Data" TableName="GDMN_5Level"></asp:LinkButton>   
     <br />
     <br />
                 <span>Select computation date:</span>
@@ -63,6 +64,36 @@
                 <asp:TextBox ID="tbEmail" runat="server" Width="300px"></asp:TextBox>
                 &nbsp;
                 <asp:Button ID="btnExecuteComputeData" runat="server" Text="Execute" OnClick="Execute" OnClientClick="return IsValid();"/>
+
+<br />&nbsp;
+    <hr />
+    <h1>Compute Custom Data</h1>
+    <br />
+      Build GDMN_6Level Custom Table
+    &nbsp;<asp:Label ID="lblCreateGDMN6LevelCustomTable" runat="server"></asp:Label>
+    &nbsp;- >>Open Report (TBD) for access to this data
+    <br />
+    <br />
+    
+                Select computation date range (mm/dd/yyyy):
+    <asp:TextBox ID="txtStartDate" runat="server" width="80" MaxLength="10"/>
+    <asp:CompareValidator ID="CompareValidator1" runat="server" 
+    ErrorMessage="!!" Type="Date" Operator="DataTypeCheck" 
+        ControlToValidate="txtStartDate" ForeColor="#990000" />&nbsp;to&nbsp;&nbsp;<asp:TextBox ID="txtEndDate" runat="server" width="80" MaxLength="10"/>
+    <asp:CompareValidator ID="CompareValidator2"
+        runat="server" ErrorMessage="!!" Type="Date" Operator="DataTypeCheck" 
+        ControlToValidate="txtEndDate" ForeColor="#990000" />
+    
+    
+    <br />&nbsp;&nbsp;&nbsp;
+                
+                Email Upon Completion:
+                <asp:TextBox ID="tbEmailCustom" runat="server" Width="300px"></asp:TextBox>
+                &nbsp;
+                <asp:Button ID="btnExecuteComputeCustomData" runat="server" Text="Execute Custom" OnClick="Execute_Custom" />
+                
+<br />&nbsp;
+    <hr />
 
 <script type="text/javascript">
 
@@ -108,6 +139,7 @@
         }
         return atLeastOneBoxChecked;
     }
+
 
 </script>
 
